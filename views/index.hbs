@@ -1,0 +1,24 @@
+<!-- JQuery for Ajax (although you can totally do it with vanilla JS too.
+Google Chart library, and chart.js, which is in public/javascripts) -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="javascripts/chart.js"></script>
+
+
+<h1>{{title}}</h1>
+
+<!-- Chart goes here, drawn with JavaScript -->
+<div id="chart_div" width="500" height="400"></div>
+
+<!-- For adding a new data point to the database.
+Data could come from anywhere - I'm putting everything on one page for simplicity.
+-->
+<div id="new_cat_form">
+  <form action="/add" method="POST">
+    Name <input name="name"/><br>
+    Age <input name="age"/><br>
+    Cuteness <input name="cuteness"/>
+    <input type="submit" value="Add">
+  </form>
+</div>
