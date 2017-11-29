@@ -31,11 +31,16 @@ function drawChart() {
     data.addColumn('number', 'age');
     data.addColumn('number', 'cuteness');
 
+    // Optional, for custom tooltips
+    data.addColumn( {type:'string', role: 'tooltip'} );
+
     // loop over chartData objects, convert to array, add to DataTable
     chartData.forEach(function(cat) {
-      data.addRow([ cat.age, cat.cuteness]);
+      data.addRow([ cat.age, cat.cuteness, cat.name ]);
     } );
 
+    // Can also add data as a block - see documentation
+    
     // configure options (which are optional)
     // see documentation
     var options = {
@@ -50,7 +55,7 @@ function drawChart() {
     // make chart - specify what type - see documentation for types available
     var chart = new google.visualization.ScatterChart(chart_div)
 
-    //and draw 
+    //and draw
     chart.draw(data, options);
 
   }
